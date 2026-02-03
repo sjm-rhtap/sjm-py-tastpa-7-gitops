@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sjm-py-tastpa-7-gitops
+  description: This is GitOps manifest for sjm-py-tastpa-7   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=sjm-py-tastpa-7
+    backstage.io/kubernetes-id: sjm-py-tastpa-7 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: sjm-py-tastpa-7
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:sjm-py-tastpa-7
